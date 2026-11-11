@@ -1,3 +1,6 @@
+[![CI Tests](https://img.shields.io/github/actions/workflow/status/MhmdRayanm7/learn-cicd-typescript-starter/ci.yml?style=flat-square&label=CI%20Tests&logo=githubactions&logoColor=white)](https://github.com/MhmdRayanm7/learn-cicd-typescript-starter/actions/workflows/ci.yml)
+
+
 # learn-cicd-typescript-starter (Notely)
 
 This repo contains the typescript starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
