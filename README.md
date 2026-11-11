@@ -1,4 +1,4 @@
-[![CI Tests](https://img.shields.io/github/actions/workflow/status/MhmdRayanm7/learn-cicd-typescript-starter/ci.yml?style=flat-square&label=CI%20Tests&logo=githubactions&logoColor=white)](https://github.com/MhmdRayanm7/learn-cicd-typescript-starter/actions/workflows/ci.yml)
+![Tests](https://github.com/MhmdRayanm7/learn-cicd-typescript-starter/actions/workflows/ci.yml/badge.svg)
 
 
 # learn-cicd-typescript-starter (Notely)
