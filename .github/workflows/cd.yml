@@ -10,6 +10,13 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      id-token: write
+
+    env:
+      GCP_PROJECT_ID: "notely-514910"
+
     steps:
       - name: Check out code
         uses: actions/checkout@v6
@@ -24,3 +31,21 @@ jobs:
 
       - name: Build application
         run: npm run build
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          project_id: ${{ env.GCP_PROJECT_ID }}
+          workload_identity_provider: "projects/941661527245/locations/global/workloadIdentityPools/github/providers/my-repo"
+          service_account: "cloud-run-deployer@notely-514910.iam.gserviceaccount.com"
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v3
+        with:
+          project_id: ${{ env.GCP_PROJECT_ID }}
+
+      - name: Build and push Docker image
+        run: |
+          gcloud builds submit \
+            --tag "us-central1-docker.pkg.dev/${GCP_PROJECT_ID}/notely-ar-repo/notely:latest" \
+            .

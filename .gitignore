@@ -3,3 +3,6 @@ coverage/
 dist/
 .env
 .vscode
+
+# Google GitHub Actions credentials
+gha-creds-*.json
